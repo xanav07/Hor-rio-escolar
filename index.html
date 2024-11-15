@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cálculos II</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    table, tr, td{
+        border: 1px solid white;
+        border-collapse: collapse;
+        width: 75%;
+        text-align: center;
+        height: 55px;
+        margin: auto;
+        align-items: center;
+     }
+     tr, td{
+        width: fit-content;
+        background-color: #96D4D4;
+     }
+</style>
+<body>
+        
+<h1>Converte temperatura Celsius, Kelvin e Fahrenheit</h1>
+<br>
+<center>
+    <table>
+        <tr>
+            <td>
+                <label for="celsius">Celsius</label>
+                <input type="number" id="r1"><br><br>
+            </td>
+            <td>
+                <label for="kelvin">Kelvin</label>
+                <input type="number" id="r2"><br><br>
+            </td>
+            <td>
+            <label for="fahrenheit">Fahrenheit</label>
+            <input type="number" id="r3"><br><br>
+            </td>
+        </tr>
+    </table>    
+    <input type=button onclick="converte_temperatura()" value="Converter" style="border: 1px solid black; border-radius: 10px; margin-top: 30px;background-color: #2095ac; color: black;font-size: 20px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></input>
+        
+    <script>
+    
+    function converte_temperatura(){
+       
+    var celsius = document.getElementById("r1").value 
+    var kelvin = document.getElementById("r2").value 
+    var fahrenheit = document.getElementById("r3").value 
+    var res1 = "";
+    var res2 = "";
+    var res3 = "";
+
+    
+    if (celsius == 0 && kelvin == 0 && fahrenheit == 0){
+        
+       
+        alert("Insira um valor diferente de zero")
+    }
+    
+    else{
+
+    if(celsius != 0 && kelvin == 0 && fahrenheit == 0){
+
+    res2 = (Number(celsius) + 273).toFixed(2);
+    res3 = ((Number(celsius) * 1.8) + 32).toFixed(2);
+
+    if (celsius <= 15) {
+                document.body.style.backgroundImage = "url('12-870_300x300.webp')";  
+            } else if (celsius > 25) {
+                document.body.style.backgroundImage = "url('Untitled.jpg')"; 
+            } else {
+                document.body.style.backgroundImage = "url('c14eed04aac0227d86968dde73f022c8.jpg')";  
+            }
+            document.body.style.backgroundSize = "cover"; 
+            document.body.style.backgroundRepeat = "no-repeat"; 
+        
+    
+    }  
+
+    else if(celsius == 0 && kelvin != 0  && fahrenheit == 0){
+
+    res1 = (Number(kelvin) - 273).toFixed(2);
+    res3 = ((Number(kelvin) * 1.8) - 459.67).toFixed(2);
+
+    if (kelvin <= 288) {
+                document.body.style.backgroundImage = "url('12-870_300x300.webp')";  
+            } else if (kelvin > 298) {
+                document.body.style.backgroundImage = "url('Untitled.jpg')"; 
+            } else {
+                document.body.style.backgroundImage = "url('c14eed04aac0227d86968dde73f022c8.jpg')";  
+            }
+            document.body.style.backgroundSize = "cover"; 
+            document.body.style.backgroundRepeat = "no-repeat"; 
+
+
+    } 
+
+    else if(celsius == 0 && kelvin == 0  && fahrenheit != 0){
+
+    res1 = ((Number(fahrenheit) - 32) * 0.5555556).toFixed(2);
+    res2 = ((Number(fahrenheit) + 459.67) * 0.5555556).toFixed(2);
+
+    if (fahrenheit <= 59) {
+                    document.body.style.backgroundImage = "url('12-870_300x300.webp')"; 
+                } else if (fahrenheit > 77) {
+                    document.body.style.backgroundImage = "url('Untitled.jpg')";
+                } else {
+                    document.body.style.backgroundImage = "url('c14eed04aac0227d86968dde73f022c8.jpg')"; 
+                }
+                document.body.style.backgroundSize = "cover"; 
+                document.body.style.backgroundRepeat = "no-repeat"; 
+
+    }
+
+    else{
+
+    alert("Só pode escrever em 1")
+
+    } 
+        document.getElementById("r1").value = res1;
+        document.getElementById("r2").value = res2;
+        document.getElementById("r3").value = res3;
+    }
+    } 
+        
+
+</script>
+</center>
+</body>
+</html>
+
+
+
